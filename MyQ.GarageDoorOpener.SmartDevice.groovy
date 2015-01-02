@@ -125,6 +125,10 @@ def updateDeviceStatus(status) {
 	if (status == "3") { sendEvent(name: "door", value: "open", display: true, descriptionText: device.displayName + " was open") }
 	if (status == "4") { sendEvent(name: "door", value: "opening", display: false, displayed: false) }  
 	if (status == "5") { sendEvent(name: "door", value: "closing", display: false, displayed: false) }  
+	if (status == "9") { 
+		sendEvent(name: "door", value: "open", display: true, descriptionText: device.displayName + " was open") 
+		sendEvent(name: "contact", value: "open", display: false, displayed: false)
+	}   
 }
 
 def updateDeviceLastActivity(long lastActivity) {
